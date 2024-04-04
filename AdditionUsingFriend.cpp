@@ -9,9 +9,9 @@ class Length
     {
         length=0;
     }
-    friend void length(Length &l);
+    friend void printLength(Length &l);
 };
-void length(Length &l)
+void printLength(Length &l)
 {
     l.length=l.length+10;
     cout<<l.length;
@@ -19,5 +19,5 @@ void length(Length &l)
 int main()
 {
     Length l1;
-    length(l1);
+    printLength(l1);
 }
