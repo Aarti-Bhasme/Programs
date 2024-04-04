@@ -11,9 +11,9 @@ class Swap
         (*this).a=a;
         (*this).b=b;
     }
-    friend void Length(Swap &s);
+    friend void Swap1(Swap &s);
 };
-  void  Length (Swap &s)
+  void  Swap1 (Swap &s)
     {
         s.temp=s.a;
         s.a=s.b;
@@ -23,6 +23,6 @@ class Swap
 int main()
 {
     Swap o1(10,20);
-    Length(o1);
+    Swap1(o1);
 }
 
