@@ -1,26 +1,29 @@
 #include <iostream>
 using namespace std;
 
-class Swap
+class Complex
 {
-    int num;
+    int real,img;
     public:
-    Swap(int num)
+    Complex()
     {
-        (*this).num=num;
+        
     }
-    friend void Swap1(Swap &, Swap &);
+    friend void operator>>(istream &in, Complex &c);
+    friend void operator<<(ostream &out,Complex &b);
 };
-void Swap1(Swap &s1, Swap &s2)
+void operator>>(istream &in, Complex &c)
 {
-    int temp;
-    temp=s1.num;
-    s1.num=s2.num;
-    s2.num=temp;
-    cout<<s1.num<<" "<<s2.num;
+    cout<<"Enter the real and imaginary part: "<<endl;
+    in>>c.real>>c.img;
 }
-int main() {
-    Swap s1(30);
-    Swap s2(50);
-    Swap1(s1,s2);
+void operator<<(ostream &out, Complex &b)
+{
+    out<<b.real<<"+"<<b.img<<"i";
+}
+int main()
+{
+    Complex c1;
+    cin>>c1;
+    cout<<c1;
 }
